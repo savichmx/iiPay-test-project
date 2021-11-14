@@ -1,0 +1,25 @@
+plugins {
+    id 'java'
+}
+
+group 'com.maksim.savich'
+version '1.0-SNAPSHOT'
+
+ext {
+    junitVersiom = '5.8.1'
+    assertjVersion= '3.21.0'
+}
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    testImplementation "org.junit.jupiter:junit-jupiter-api:$junitVersiom"
+    testImplementation "org.assertj:assertj-core:$assertjVersion"
+    testRuntimeOnly "org.junit.jupiter:junit-jupiter-engine:$junitVersiom"
+}
+
+test {
+    useJUnitPlatform()
+}
